@@ -1,0 +1,41 @@
+<section class="general-container" [ngStyle]="{ backgroundColor: colorBg}">
+  <section class="items-container" >
+    <!-- <svg *ngIf="tiltOrientation === 'right'" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186.4 147.93">
+      <g id="Layer_1-2" data-name="Layer 1">
+        <path d="m186.4,133.42V14.52c0-8.51-7.28-15.19-15.76-14.46C118.17,4.54,65.76,9.02,13.28,13.51,5.77,14.15,0,20.43,0,27.97v105.44c0,8.02,6.5,14.52,14.52,14.52h157.37c8.02,0,14.52-6.5,14.52-14.52Z"/>
+      </g>
+    </svg>
+    <svg *ngIf="tiltOrientation === 'left'" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186.4 147.93">
+      <g id="Layer_1-2" data-name="Layer 1">
+        <path d="m0,133.42V14.52C0,6.01,7.28-.67,15.76.05c52.47,4.49,104.89,8.97,157.36,13.45,7.51.64,13.28,6.93,13.28,14.47v105.44c0,8.02-6.5,14.52-14.52,14.52H14.52c-8.02,0-14.52-6.5-14.52-14.52Z"/>
+      </g>
+    </svg> -->
+    <div class="item-class" *ngFor="let item of data; let i = index">
+      <div
+        class="image-wrapper"
+        [id]="identifier + '-' + i"
+      >
+        <div class="image-wrapper-2"  [ngStyle]="{ backgroundColor: backgroundMap[i] }">
+          <img [src]="item.strDrinkThumb" [alt]="item.strDrink" class="circular-image" />
+        </div>
+        <div *ngIf="i === titlePosition" class="text-title">
+          <p #titleElement></p>
+        </div>
+      </div>
+      <div class="item-description">
+        <h4>{{ item.strDrink }}</h4>
+        <p>Add to my list +</p>
+      </div>
+    </div>
+
+
+
+  </section>
+
+  <div class="paginator">
+      <span  *ngFor="let page of pagesArray" class="pointer" (click)="goToPage(page)" [class.active]="currentPage === page">
+        {{ page }}
+      </span>
+  </div>
+
+</section>

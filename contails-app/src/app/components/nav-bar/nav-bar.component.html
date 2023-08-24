@@ -1,2 +1,14 @@
-<p>nav-bar works! {{ "title" | translate }}</p>
-<p>Test navbar {{"navbar.logoTitle"|translate}}</p>
+<nav class="flex-3-col-container align-center">
+  <div id="logo">
+    <img src="/assets/coctailsAssets/Logo.png" alt="brand-logo-two-bords" >
+  </div>
+  <div id="navbar-menu-items-container" class="flex gap-12">
+    <span>{{"navbar.item.menu"|translate}}</span>
+    <span>{{"navbar.item.rewards"|translate}}</span>
+    <span>{{"navbar.item.blog"|translate}}</span>
+  </div>
+  <div class="search-bar flex align-center gap-4">
+    <input [formControl]="searchControl" type="text"  [placeholder]="translateService.instant('navbar.item.inputSearch.placeholder')">
+    <img src="/assets/coctailsAssets/bookmarks.png" alt="bookmarks image" >
+  </div>
+</nav>

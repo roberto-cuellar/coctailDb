@@ -1,4 +1,23 @@
 {
   "title": "Title Doble U",
-  "navbar.logoTitle": "THE COCKTAIL DB"
+  "navbar.logoTitle": "THE COCKTAIL DB",
+  "navbar.item.menu": "Menu",
+  "navbar.item.rewards": "Rewards",
+  "navbar.item.blog": "Blog",
+  "navbar.item.inputSearch.placeholder": "Search",
+
+  "landing.banner.main.title":"Drink of the moment",
+  "landing.banner.main.description":"Gin, algo known as gin, is one of the most popular and appreciated alcoholic beverages worldwide, specially for its versatility in cocktails. Originally from Europe, this spirit has evolved over the centuries and comes in a wide range of styles and flavors.",
+  "landing.banner.main.btn.tryNow":"Try now",
+
+  "landing.banner.sideItem.versatility.title":"Versatility",
+  "landing.banner.sideItem.versatility.description":"The range of flavors in gin is exceptionally wide, thanks to the variety of botanicals that can be used in its production.",
+
+  "landing.banner.sideItem.distiontiv.title":"Distiontiv Flavor",
+  "landing.banner.sideItem.distiontiv.description":"Bitterswwet and slightly woody flavor is the signature of any gin.",
+
+
+  "landing.banner.sideItem.purity.title":"Purity",
+  "landing.banner.sideItem.purity.description":"This gives it a clean, pure feel, without the caramel or vanilla notes that come from barrel aging."
+
 }

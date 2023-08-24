@@ -1,0 +1,106 @@
+#landing-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#image-banner-container {
+  width: 200px;
+  height: 200px;
+  background: red;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.main-img-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lineas-fondo {
+  z-index: -1000;
+  transform: scale(0.6);
+}
+
+.center-image {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.left-image {
+  right: 0%;
+}
+
+.right-image {
+  left: -10%;
+  bottom: -10%;
+  transform: scale(0.6);
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+}
+
+.circular-container {
+  width: 400px; /* Establece según tus necesidades */
+  height: 400px;
+  position: relative;
+}
+
+// .div-inclinado {
+//   width: 300px;
+//   height: 150px;
+//   background-color: #3498db;
+//   border-radius: 30px;
+//   transform: skewY(-5deg); /* Ajusta el valor para controlar el grado de inclinación */
+//   transform-origin: top left; /* Esto especifica que el punto de origen para la inclinación es la esquina superior izquierda */
+// }
+
+// .div-inclinado > * {
+//   transform: skewY(5deg); /* Inclinación inversa al div padre */
+// }
+
+// .div-inclinado::after{
+//   contain: '';
+//   background-color: red;
+//   width: 20px;
+//   height: 20px  ;
+// }
+
+.box {
+  background: red;
+  width: 200px;
+  position: relative;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin-left: 50px;
+  color: white;
+  font-size: 21px;
+  font-family: arial, sans-serif;
+}
+.box:after {
+  position: absolute;
+  right: -50px;
+  content: '';
+  width: 0;
+  height: 0;
+  // border-left: 50px solid transparent;
+  border-top: 10px 20px;
+  border-top-right-radius: 50px;
+  // border-bottom: 100px solid red;
+  // border-top: 100px solid red;
+}
+// .box:before {
+//   position: absolute;
+//   left: -50px;
+//   content: '';
+//   width: 0;
+//   height: 0;
+//   border-left: 50px solid transparent;
+//   border-right: 50px solid transparent;
+//   border-bottom: 100px solid red;
+// }

@@ -1,0 +1,41 @@
+<section id="landing-banner">
+  <article>
+    <h1>{{ "landing.banner.main.title" | translate }}</h1>
+    <p>{{ "landing.banner.main.description" | translate }}</p>
+    <h2>4.9</h2>
+    <div>
+      <button>{{ "landing.banner.main.btn.tryNow" | translate }}</button>
+    </div>
+  </article>
+  <article class="main-img-banner">
+    <img
+      class="lineas-fondo"
+      src="/assets/coctailsAssets/Lineas-fondo.png"
+      alt="gin-image"
+    />
+    <div id="image-banner-container">
+      <img
+        src="/assets/coctailsAssets/Botella-Gin-centro.png"
+        alt="gin-image"
+        class="center-image"
+      />
+      <img
+        src="/assets/coctailsAssets/Palitos-cafe-centro.png"
+        alt="gin-image"
+        class="left-image"
+      />
+      <img
+        src="/assets/coctailsAssets/Fruta-roja-centro.png"
+        alt="gin-image"
+        class="right-image"
+      />
+    </div>
+  </article>
+  <article>
+    <div *ngFor="let sideItem of sideItems">
+      <img [src]="sideItem.imgUrl" />
+      <h3>{{ sideItem.title | translate }}</h3>
+      <p>{{ sideItem.description | translate }}</p>
+    </div>
+  </article>
+</section>

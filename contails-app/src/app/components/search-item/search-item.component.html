@@ -1,0 +1,4 @@
+<div>
+  <span [class.active]="actualChar === char" (click)="emitChar(char)" class="pointer search-char" *ngFor="let char of alphabet">{{char}}</span>
+  <span (click)="deleteSearch()" *ngIf="isSearch" class="pointer">Delete Search</span>
+</div>

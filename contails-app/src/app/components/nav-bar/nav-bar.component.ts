@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { Component, OnInit } from '@angular/core';
+import { ReactiveFormsModule, FormControl } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { debounceTime } from 'rxjs';
+import { SearchLetterService } from 'src/app/shared/services/search-letter.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,9 +10,31 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./nav-bar.component.scss'],
   standalone: true,
   imports: [
-    TranslateModule
+    TranslateModule,
+    ReactiveFormsModule
   ]
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit{
+  searchControl = new FormControl();
+  constructor(
+      public translateService: TranslateService,
+      private searchLetterService:SearchLetterService){}
+
+  ngOnInit(): void {
+    this.searchControl.valueChanges.pipe(
+      debounceTime(400)
+     ).subscribe(value => {
+      this.searchLetterService.updateText(value);
+    });
+
+    this.searchLetterService.charObservable$.subscribe((char) => {
+      if(char){
+        this.searchControl.setValue('');
+        // this.searchControl.reset();
+      }
+    });
+  }
 
 }
+
+

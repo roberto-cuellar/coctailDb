@@ -1,3 +1,8 @@
 {
-  "title": "Title"
+  "title": "Title Doble U",
+  "navbar.logoTitle": "THE COCKTAIL DB",
+  "navbar.item.menu": "Menu",
+  "navbar.item.rewards": "Premios",
+  "navbar.item.blog": "Blog",
+  "navbar.item.inputSearch.placeholder": "Buscar"
 }

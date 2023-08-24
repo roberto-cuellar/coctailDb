@@ -1,1 +1,15 @@
-<p>landing works! {{ "title" | translate }}</p>
+<app-landing-banner></app-landing-banner>
+
+<ng-container *ngFor="let drinkByCategory of allDrinks;let i = index">
+  <app-show-items
+    [title]="drinkByCategory.category"
+    [titlePosition]="i % 2 === 0 ? 0:2"
+    [data]="drinkByCategory.drinks"
+    identifier="drinkByCategory.category"
+    [colorBg]="i % 2 === 0 ? '#574747':'#475751'"
+    [charToSearch]="charToSearch"
+    [textToSearch]="textToSearch"
+    ></app-show-items>
+</ng-container>
+
+<app-search-item></app-search-item>
