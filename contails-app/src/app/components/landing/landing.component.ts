@@ -3,13 +3,7 @@ import { SearchLetterService } from 'src/app/shared/services/search-letter.servi
 import { DrinksRepositoryService } from './infrastructure/repository/drinks-repository.service';
 import {
   DrinkCategories,
-  DrinkMin,
   DrinksAndCategory,
-  latestDrink,
-  popularDrink,
-  popularIngredient,
-  randomDrink,
-  randomIngredient,
 } from 'src/app/interfaces/drinks.interfaces';
 
 @Component({

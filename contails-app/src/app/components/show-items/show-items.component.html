@@ -1,4 +1,4 @@
-<section class="general-container" [ngStyle]="isSmallScreen ? {} : { backgroundColor: colorBg }">
+<section *ngIf="data.length > 0" class="general-container " [ngStyle]="isSmallScreen ? {} : { backgroundColor: colorBg }">
   <section class="items-container" >
     <!-- <svg *ngIf="tiltOrientation === 'right'" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186.4 147.93">
       <g id="Layer_1-2" data-name="Layer 1">
@@ -12,20 +12,20 @@
     </svg> -->
     <div class="item-class" *ngFor="let item of data; let i = index">
       <div
-
-        class="image-wrapper"
+      (click)="goToDrink(item.idDrink)"
+        class="image-wrapper pointer"
         [id]="identifier + '-' + i"
       >
         <div (click)="goToDrink(item.idDrink)" class="image-wrapper-2 pointer"  [ngStyle]="{ backgroundColor: backgroundMap[i] }">
-          <img [src]="item.strDrinkThumb" [alt]="item.strDrink" class="circular-image" />
+          <img [src]="item.strDrinkThumb ? item.strDrinkThumb : '/assets/coctailsAssets/Vodka-Lemon.png'" [alt]="item.strDrink" class="circular-image" />
         </div>
         <div *ngIf="i === titlePosition" class="text-title">
           <p #titleElement></p>
         </div>
       </div>
-      <div class="item-description">
+      <div class="item-description text-color-white">
         <h4>{{ item.strDrink }}</h4>
-        <p>Add to my list +</p>
+        <p><span class="opacity">Add to my list</span>  +</p>
       </div>
     </div>
 
@@ -33,8 +33,8 @@
 
   </section>
 
-  <div class="paginator">
-      <span  *ngFor="let page of pagesArray" class="pointer" (click)="goToPage(page)" [class.active]="currentPage === page">
+  <div class="paginator mt-16">
+      <span  *ngFor="let page of pagesArray" class="pointer text-color-white ml-6" (click)="goToPage(page)" [class.active]="currentPage === page">
         {{ page }}
       </span>
   </div>

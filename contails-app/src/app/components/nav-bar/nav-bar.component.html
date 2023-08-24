@@ -7,8 +7,13 @@
     <span>{{"navbar.item.rewards"|translate}}</span>
     <span>{{"navbar.item.blog"|translate}}</span>
   </div>
-  <div class="search-bar flex align-center gap-4">
-    <input [formControl]="searchControl" type="text"  [placeholder]="translateService.instant('navbar.item.inputSearch.placeholder')">
+  <div class="search-bar flex align-center gap-16">
+    <div class="input-icon flex align-center gap-8">
+      <span class="material-symbols-outlined">
+        search
+        </span>
+        <input [formControl]="searchControl" type="text"  [placeholder]="translateService.instant('navbar.item.inputSearch.placeholder')">
+    </div>
     <img src="/assets/coctailsAssets/bookmarks.png" alt="bookmarks image" >
   </div>
 </nav>

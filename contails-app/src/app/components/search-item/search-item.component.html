@@ -1,4 +1,4 @@
 <div class="search-component">
-  <span [class.active]="actualChar === char" (click)="emitChar(char)" class="pointer search-char" *ngFor="let char of alphabet">{{char}}</span>
-  <span (click)="deleteSearch()" *ngIf="isSearch" class="pointer">Delete Search</span>
+  <span [class.active]="actualChar === char" (click)="emitChar(char)" class="pointer search-char" *ngFor="let char of alphabet">{{char | titlecase}} /</span>
+  <span [class.active]="isSearch" (click)="deleteSearch()" *ngIf="isSearch" class="pointer delete-btn">Delete Search</span>
 </div>

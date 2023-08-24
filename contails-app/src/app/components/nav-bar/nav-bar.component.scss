@@ -13,3 +13,20 @@ nav{
     justify-content: center;
   }
 }
+
+.input-icon{
+  border-radius: 18px;
+  width: 150px;
+  padding: 8px 15px;
+  box-shadow: 2px 4px 5px rgba(128, 128, 128, 0.536) ;
+  background-color: white;
+}
+
+input{
+  width: 100px;
+  border: none;
+  font-size: 17px;
+  &:focus{
+    border: none;
+  }
+}

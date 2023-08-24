@@ -1,14 +1,28 @@
 .search-char{
   padding: 4px;
   margin: 0px 2px;
+  &:hover{
+    color: rgb(10, 10, 10);
+  }
 }
 
 .active{
-  background-color: red;
+  background-color: #475751;
+  color: #EFECE5;
 }
 
 .search-component{
   display: flex;
   flex-wrap: wrap;
+  font-size: 25px;
+  align-items: center;
   justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  color: rgb(39, 38, 38);
+}
+
+.delete-btn{
+  padding: 4px 8px;
+  border-radius: 4px 4px 0px 0px;
 }

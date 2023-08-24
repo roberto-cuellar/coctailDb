@@ -65,24 +65,22 @@ export class ShowItemsComponent implements AfterViewInit, OnChanges {
   @ViewChild('titleElement') titleElement!: ElementRef;
 
   backgroundMap = [
-    'red',
-    'blue',
-    'yellow',
-    'green',
-    'black',
-    'orange',
-    'red',
-    'blue',
-    'yellow',
-    'green',
-    'black',
-    'orange',
-    'red',
-    'blue',
-    'yellow',
-    'green',
-    'black',
-    'orange',
+    '#DFBED8',
+    '#C5DBA1',
+    '#D3B09C',
+    '#DFBED8',
+    '#C5DBA1',
+    '#93887A',
+    '#DFBED8',
+    '#DBB6A1',
+    '#DFBED8',
+    '#C5DBA1',
+    '#D3B09C',
+    '#DFBED8',
+    '#C5DBA1',
+    '#93887A',
+    '#DFBED8',
+    '#DBB6A1',
   ];
 
   isSmallScreen = false;
@@ -92,7 +90,6 @@ export class ShowItemsComponent implements AfterViewInit, OnChanges {
   ngAfterViewInit(): void {
     this.configureTitle();
     this.configurePagination();
-
     this.screenWatch();
   }
 

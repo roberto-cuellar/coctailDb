@@ -2,6 +2,7 @@
 
 <ng-container *ngFor="let drinkByCategory of allDrinks;let i = index">
   <app-show-items
+    *ngIf="drinkByCategory.drinks.length > 0"
     [title]="drinkByCategory.category"
     [titlePosition]="i % 2 === 0 ? 0:2"
     [data]="drinkByCategory.drinks"

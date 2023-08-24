@@ -4,6 +4,7 @@
   max-width: 1200px;
   margin: auto;
   padding: 0px 1rem;
+  color: #574747;
 }
 
 @media screen and (max-width: 1200px) {
@@ -12,13 +13,55 @@
   }
 }
 
+.title-banner{
+  font-size: 40px;
+  font-weight: 550;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #574747;
+}
+
+button{
+  padding: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #A1DBC3;
+  border-radius: 40px;
+  font-size: 20px;
+  color: #574747;
+  box-shadow: 4px 4px 5px #60a5a995;
+}
+
+.arrow{
+  background-color: #5CA3A8;
+  color: #D0DCD8;
+  padding: 2px;
+  border-radius: 50%;
+}
+
+.title-number{
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.left-side-items{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
 #image-banner-container {
-  width: 200px;
-  height: 200px;
-  background: red;
+  width: 220px;
+  height: 220px;
+  background: #A1DBC3;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
+  box-shadow: 0px 0px 8px rgba(64, 64, 64, 0.582);
 }
 .main-img-banner {
   display: flex;
@@ -28,7 +71,7 @@
 
 .lineas-fondo {
   z-index: -1000;
-  transform: scale(0.6);
+  transform: scale(0.8);
 }
 
 .center-image {
@@ -54,62 +97,53 @@ img {
 }
 
 .circular-container {
-  width: 400px; /* Establece según tus necesidades */
+  width: 400px;
   height: 400px;
   position: relative;
 }
 
-// .div-inclinado {
-//   width: 300px;
-//   height: 150px;
-//   background-color: #3498db;
-//   border-radius: 30px;
-//   transform: skewY(-5deg); /* Ajusta el valor para controlar el grado de inclinación */
-//   transform-origin: top left; /* Esto especifica que el punto de origen para la inclinación es la esquina superior izquierda */
-// }
 
-// .div-inclinado > * {
-//   transform: skewY(5deg); /* Inclinación inversa al div padre */
-// }
+@mixin circular-image-base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #A1DBC3;
+  border-radius: 50%;
+  padding: 10px;
+}
 
-// .div-inclinado::after{
-//   contain: '';
-//   background-color: red;
-//   width: 20px;
-//   height: 20px  ;
-// }
+h3{
+  margin: 0;
+}
 
-.box {
-  background: red;
-  width: 200px;
+
+.circular-image-wrapper {
+  @include circular-image-base();
+  width: 25px;
+  height: 25px;
+  background-color: #A1DBC3;
   position: relative;
-  height: 100px;
-  line-height: 100px;
-  text-align: center;
-  margin-left: 50px;
-  color: white;
-  font-size: 21px;
-  font-family: arial, sans-serif;
 }
-.box:after {
+
+.right-side-item{
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.item-title-right{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.circular-image {
+  width: 100%;
+  height: 100%;
+  object-fit:none;
   position: absolute;
-  right: -50px;
-  content: "";
-  width: 0;
-  height: 0;
-  // border-left: 50px solid transparent;
-  border-top: 10px 20px;
-  border-top-right-radius: 50px;
-  // border-bottom: 100px solid red;
-  // border-top: 100px solid red;
+  border-radius: 50%;
 }
-// .box:before {
-//   position: absolute;
-//   left: -50px;
-//   content: '';
-//   width: 0;
-//   height: 0;
-//   border-left: 50px solid transparent;
-//   border-right: 50px solid transparent;
-//   border-bottom: 100px solid red;
-// }
+

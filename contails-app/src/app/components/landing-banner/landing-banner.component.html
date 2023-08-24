@@ -1,10 +1,12 @@
 <section id="landing-banner">
-  <article>
-    <h1>{{ "landing.banner.main.title" | translate }}</h1>
+  <article class="left-side-items">
+    <h1 class="title-banner">{{ "landing.banner.main.title" | translate }}</h1>
     <p>{{ "landing.banner.main.description" | translate }}</p>
-    <h2>4.9</h2>
+    <h2 class="title-number">4.9</h2>
     <div>
-      <button>{{ "landing.banner.main.btn.tryNow" | translate }}</button>
+      <button>{{ "landing.banner.main.btn.tryNow" | translate }} <span class="material-symbols-outlined arrow">
+        chevron_right
+        </span></button>
     </div>
   </article>
   <article class="main-img-banner">
@@ -32,10 +34,14 @@
     </div>
   </article>
   <article>
-    <div *ngFor="let sideItem of sideItems">
-      <img [src]="sideItem.imgUrl" />
-      <h3>{{ sideItem.title | translate }}</h3>
-      <p>{{ sideItem.description | translate }}</p>
+    <div *ngFor="let sideItem of sideItems" class="right-side-item ">
+      <div class="circular-image-wrapper">
+        <img class="circular-image" [src]="sideItem.imgUrl" />
+      </div>
+      <div>
+        <h3 class="item-title-right">{{ sideItem.title | translate }}</h3>
+        <p>{{ sideItem.description | translate }}</p>
+      </div>
     </div>
   </article>
 </section>
