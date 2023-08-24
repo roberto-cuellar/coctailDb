@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Drink } from 'src/app/interfaces/drinks.interfaces';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -35,7 +34,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         filter: 'blur(0)'
       })),
       transition(':enter', [
-        animate('1s ease-in-out', style({
+        animate('0.2s ease-in-out', style({
           opacity: 1,
           transform: 'scale(1.1)',
           filter: 'blur(0)'

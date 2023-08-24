@@ -1,7 +1,7 @@
 <section class="drink-info-container" *ngIf="drinkData">
   <h3 class="title-ingredients">Ingredients</h3>
   <div class="fist-section">
-    <div class="drink-name">
+    <div [@enterAnimation] class="drink-name">
       <h1 class="h1-title">{{drinkData.strDrink}}</h1>
       <div class="circular-image-wrapper">
         <img class="circular-image" [src]="drinkData.strDrinkThumb" [alt]="drinkData.strDrink" srcset="">
@@ -9,7 +9,7 @@
     </div>
     <div class="ingredients" [class.flex-3-col-container]="!isSmallScreen">
       <div class="ingredient" *ngFor="let ingredient of drinkData.strIngredients;let i=index">
-        <div class="circular-image-item-wrapper">
+        <div [@enterAnimation] class="circular-image-item-wrapper">
           <img class="circular-image" [src]="ingredient.url" alt="" srcset="">
         </div>
         <p style="font-weight: 600;">{{drinkData.strMeasures[i]}}</p>
