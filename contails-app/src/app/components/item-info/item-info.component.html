@@ -1,1 +1,57 @@
-<p>item-info works!</p>
+<section class="drink-info-container" *ngIf="drinkData">
+  <h3>Ingredients</h3>
+  <div class="fist-section">
+    <div class="drink-name">
+      <h1>{{drinkData.strDrink}}</h1>
+      <div class="circular-image-wrapper">
+        <img class="circular-image" [src]="drinkData.strDrinkThumb" [alt]="drinkData.strDrink" srcset="">
+      </div>
+    </div>
+    <div class="ingredients flex-3-col-container">
+      <div class="ingredient" *ngFor="let ingredient of drinkData.strIngredients;let i=index">
+        <div class="circular-image-item-wrapper">
+          <img class="circular-image" [src]="ingredient.url" alt="" srcset="">
+        </div>
+        <p>{{drinkData.strMeasures[i]}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="instructions-language flex-2-col-responsive">
+    <div class="instructions">
+      <ng-container *ngIf="languageForInstructions === 'EN'">
+        <p *ngFor="let instruction of drinkData.strInstructionsEN;let i=index">{{i+1}} - {{instruction}}</p>
+        <p *ngIf="drinkData.strNoteEN">{{drinkData.strNoteEN}}</p>
+      </ng-container>
+      <ng-container *ngIf="languageForInstructions === 'ES'">
+        <p *ngFor="let instruction of drinkData.strInstructionsES;let i=index">{{i+1}} - {{instruction}}</p>
+        <p *ngIf="drinkData.strNoteES">{{drinkData.strNoteES}}</p>
+      </ng-container>
+      <ng-container *ngIf="languageForInstructions === 'FR'">
+        <p *ngFor="let instruction of drinkData.strInstructionsFR;let i=index">{{i+1}} - {{instruction}}</p>
+        <p *ngIf="drinkData.strNoteFR">{{drinkData.strNoteFR}}</p>
+      </ng-container>
+      <ng-container *ngIf="languageForInstructions === 'DE'">
+        <p *ngFor="let instruction of drinkData.strInstructionsDE;let i=index">{{i+1}} - {{instruction}}</p>
+        <p *ngIf="drinkData.strNoteDE">{{drinkData.strNoteDE}}</p>
+      </ng-container>
+      <ng-container *ngIf="languageForInstructions === 'IT'">
+        <p *ngFor="let instruction of drinkData.strInstructionsIT;let i=index">{{i+1}} - {{instruction}}</p>
+        <p *ngIf="drinkData.strNoteIT">{{drinkData.strNoteIT}}</p>
+      </ng-container>
+
+    </div>
+    <div class="language flex flex-column gap-12">
+      <div class="pointer" *ngIf="drinkData.strInstructionsEN.length > 0" (click)="languageForInstructions = 'EN'">
+        <img src="/assets/coctailsAssets/USA.png" alt="">
+      </div>
+      <div class="pointer" *ngIf="drinkData.strInstructionsES.length > 0" (click)="languageForInstructions = 'ES'">
+        <img src="/assets/coctailsAssets/spain.png" alt="">
+      </div>
+      <div *ngIf="drinkData.strInstructionsFR.length > 0" (click)="languageForInstructions = 'FR'">
+        <img src="/assets/coctailsAssets/belgium.png" alt="">
+      </div>
+      <!-- <button *ngIf="drinkData.strInstructionsIT.length > 0" (click)="languageForInstructions = 'IT'">IT</button>
+      <button *ngIf="drinkData.strInstructionsDE.length > 0" (click)="languageForInstructions = 'DE'">DE</button> -->
+    </div>
+  </div>
+</section>

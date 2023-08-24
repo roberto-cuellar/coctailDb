@@ -49,6 +49,7 @@ export class DrinksRepositoryService {
     let strInstructionsFR = drink.strInstructionsFR ? drink.strInstructionsFR.split('.').filter(Boolean) : [];
     let strInstructionsDE = drink.strInstructionsDE ? drink.strInstructionsDE.split('.').filter(Boolean) : [];
     let strInstructionsIT = drink.strInstructionsIT ? drink.strInstructionsIT.split('.').filter(Boolean) : [];
+    let strInstructionsEN = drink.strInstructions ? drink.strInstructions.split('.').filter(Boolean) : [];
 
     const extractNote = (instructions: string[], noteKeyword: string): string => {
       const noteIndex = instructions.findIndex((instruction) => instruction.trim().startsWith(noteKeyword));
@@ -66,7 +67,7 @@ export class DrinksRepositoryService {
         .map(ingredient => {
           return {
             label: ingredient,
-            url: 'https://www.thecocktaildb.com/images/ingredients/' + ingredient.replace(/ /g, '-') + '.png'
+            url: 'https://www.thecocktaildb.com/images/ingredients/' + ingredient + '.png'
           };
         });
   };
@@ -80,10 +81,12 @@ export class DrinksRepositoryService {
       strInstructionsFR,
       strInstructionsDE,
       strInstructionsIT,
+      strInstructionsEN,
       strNoteES: extractNote(strInstructionsES, 'NOTA:'),
       strNoteFR: extractNote(strInstructionsFR, 'NOTE:'),
       strNoteDE: extractNote(strInstructionsDE, 'HINWEIS:'),
-      strNoteIT: extractNote(strInstructionsIT, 'HINWEIS:')
+      strNoteIT: extractNote(strInstructionsIT, 'HINWEIS:'),
+      strNoteEN: extractNote(strInstructionsEN, 'NOTE:')
     };
   }
 

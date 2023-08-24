@@ -11,6 +11,7 @@ import { DrinkInfo } from 'src/app/interfaces/drinks.interfaces';
 export class ItemInfoComponent implements OnInit {
   drinkId = '';
   drinkData!: DrinkInfo;
+  languageForInstructions = 'EN';
 
   constructor(
     private router: Router,
@@ -27,7 +28,6 @@ export class ItemInfoComponent implements OnInit {
     this.drinksRepositoryService.getDrinkById(this.drinkId).subscribe({
       next: (resp) => {
         this.drinkData = resp;
-        console.log('Respuesta: ', resp);
       },
       error: (err) => {
         this.router.navigate(['']);

@@ -1,0 +1,54 @@
+.drink-info-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.drink-name{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fist-section{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin circular-image-base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #A1DBC3;
+  border-radius: 50%;
+  padding: 3%;
+}
+
+.circular-image-wrapper {
+  @include circular-image-base();
+  width: 300px;
+  height: 300px;
+  background-color: #A1DBC3;
+}
+
+.circular-image-item-wrapper {
+  @include circular-image-base();
+  width: 150px;
+  height: 150px;
+  background-color: #A1DBC3;
+}
+
+.circular-image {
+  width: 100%;
+  border-radius: 50%;
+}
+
+
+
+.ingredient{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

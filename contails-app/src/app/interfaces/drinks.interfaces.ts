@@ -36,10 +36,12 @@ export interface DrinkInfo{
   strInstructionsFR: string[];
   strInstructionsIT: string[];
   strInstructionsDE: string[];
+  strInstructionsEN: string[];
   strNoteES: string;
   strNoteFR: string;
   strNoteDE: string;
   strNoteIT: string;
+  strNoteEN: string;
 }
 
 export interface ingredientImg{

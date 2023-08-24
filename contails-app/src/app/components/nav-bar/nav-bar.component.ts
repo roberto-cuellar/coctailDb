@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { debounceTime } from 'rxjs';
 import { SearchLetterService } from 'src/app/shared/services/search-letter.service';
@@ -11,12 +12,14 @@ import { SearchLetterService } from 'src/app/shared/services/search-letter.servi
   standalone: true,
   imports: [
     TranslateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class NavBarComponent implements OnInit{
   searchControl = new FormControl();
   constructor(
+      private router: Router,
       public translateService: TranslateService,
       private searchLetterService:SearchLetterService){}
 
