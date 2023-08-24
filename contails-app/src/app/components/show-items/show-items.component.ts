@@ -6,8 +6,6 @@ import {
   Component,
   ElementRef,
   Input,
-  OnInit,
-  Output,
   ViewChild,
   ChangeDetectorRef,
 } from '@angular/core';
@@ -15,6 +13,8 @@ import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Drink } from 'src/app/interfaces/drinks.interfaces';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-show-items',
@@ -22,6 +22,28 @@ import { BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./show-items.component.scss'],
   standalone: true,
   imports: [TranslateModule, CommonModule],
+  animations: [
+    trigger('enterAnimation', [
+      state('void', style({
+        opacity: 0,
+        transform: 'scale(0)',
+        filter: 'blur(1px)'
+      })),
+      state('*', style({
+        opacity: 1,
+        transform: 'scale(1)',
+        filter: 'blur(0)'
+      })),
+      transition(':enter', [
+        animate('1s ease-in-out', style({
+          opacity: 1,
+          transform: 'scale(1.1)',
+          filter: 'blur(0)'
+        })),
+        animate('100ms')
+      ])
+    ])
+  ]
 })
 export class ShowItemsComponent implements AfterViewInit, OnChanges {
   @Input() tiltOrientation: 'left' | 'right' = 'left';

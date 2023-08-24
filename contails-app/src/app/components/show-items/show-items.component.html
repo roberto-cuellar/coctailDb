@@ -16,7 +16,7 @@
         class="image-wrapper pointer"
         [id]="identifier + '-' + i"
       >
-        <div (click)="goToDrink(item.idDrink)" class="image-wrapper-2 pointer"  [ngStyle]="{ backgroundColor: backgroundMap[i] }">
+        <div [@enterAnimation] (click)="goToDrink(item.idDrink)" class="image-wrapper-2 pointer"  [ngStyle]="{ backgroundColor: backgroundMap[i] }">
           <img [src]="item.strDrinkThumb ? item.strDrinkThumb : '/assets/coctailsAssets/Vodka-Lemon.png'" [alt]="item.strDrink" class="circular-image" />
         </div>
         <div *ngIf="i === titlePosition" class="text-title">
