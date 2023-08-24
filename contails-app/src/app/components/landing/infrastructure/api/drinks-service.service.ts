@@ -18,12 +18,16 @@ export class DrinksServiceService {
     return this.http.get<any[]>(BASE_URL + '/list.php?c=list');
   }
 
-  getDrinks():Observable<any[]>{
-    return of(allDrinks)
-  }
-
   getDrinksByCategory(category:string):Observable<any>{
     return this.http.get<any>(BASE_URL + `/filter.php?c=${category}`);
+  }
+
+  getDrinkById(id:string):Observable<any>{
+    return this.http.get<any>(BASE_URL + `/lookup.php?i=${id}`);
+  }
+
+  getImageByName(name:string):Observable<any>{
+    return this.http.get<any>(`www.thecocktaildb.com/images/ingredients/${name}`);
   }
 
 }

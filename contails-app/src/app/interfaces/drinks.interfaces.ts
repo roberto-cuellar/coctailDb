@@ -27,6 +27,25 @@ export interface DrinksAndCategory {
   category: string;
 }
 
+export interface DrinkInfo{
+  strDrink: string;
+  strDrinkThumb:string;
+  strIngredients: ingredientImg[];
+  strMeasures: string[];
+  strInstructionsES: string[];
+  strInstructionsFR: string[];
+  strInstructionsIT: string[];
+  strInstructionsDE: string[];
+  strNoteES: string;
+  strNoteFR: string;
+  strNoteDE: string;
+  strNoteIT: string;
+}
+
+export interface ingredientImg{
+  label: string;
+  url: string;
+}
 
 
 

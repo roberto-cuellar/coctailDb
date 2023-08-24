@@ -11,6 +11,7 @@ import {
   ViewChild,
   ChangeDetectorRef,
 } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Drink, DrinkMin } from 'src/app/interfaces/drinks.interfaces';
 
@@ -82,7 +83,7 @@ export class ShowItemsComponent implements AfterViewInit, OnChanges {
     'orange',
   ];
 
-  constructor(private cdRef: ChangeDetectorRef) {}
+  constructor(private cdRef: ChangeDetectorRef, private router: Router) {}
 
   ngAfterViewInit(): void {
     this.configureTitle();
@@ -156,5 +157,8 @@ export class ShowItemsComponent implements AfterViewInit, OnChanges {
     this._data = [...this._dataAux.slice(startIndex, endIndex)];
   }
 
+  goToDrink(id:string){
+    this.router.navigate(['cocktail-info',id]);
+  }
 
 }

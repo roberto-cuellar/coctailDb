@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './landing.component';
+import { ItemInfoComponent } from '../item-info/item-info.component';
 
 const routes: Routes = [
   {
@@ -9,6 +10,10 @@ const routes: Routes = [
       {
         path: '',
         component: LandingComponent,
+      },
+      {
+        path: 'cocktail-info/:id',
+        component: ItemInfoComponent,
       },
       { path: '**', redirectTo: '', pathMatch: 'full' },
     ],

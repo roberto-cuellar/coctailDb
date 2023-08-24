@@ -12,10 +12,11 @@
     </svg> -->
     <div class="item-class" *ngFor="let item of data; let i = index">
       <div
+
         class="image-wrapper"
         [id]="identifier + '-' + i"
       >
-        <div class="image-wrapper-2"  [ngStyle]="{ backgroundColor: backgroundMap[i] }">
+        <div (click)="goToDrink(item.idDrink)" class="image-wrapper-2 pointer"  [ngStyle]="{ backgroundColor: backgroundMap[i] }">
           <img [src]="item.strDrinkThumb" [alt]="item.strDrink" class="circular-image" />
         </div>
         <div *ngIf="i === titlePosition" class="text-title">
