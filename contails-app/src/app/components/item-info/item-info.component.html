@@ -7,7 +7,7 @@
         <img class="circular-image" [src]="drinkData.strDrinkThumb" [alt]="drinkData.strDrink" srcset="">
       </div>
     </div>
-    <div class="ingredients flex-3-col-container">
+    <div class="ingredients" [class.flex-3-col-container]="!isSmallScreen">
       <div class="ingredient" *ngFor="let ingredient of drinkData.strIngredients;let i=index">
         <div class="circular-image-item-wrapper">
           <img class="circular-image" [src]="ingredient.url" alt="" srcset="">

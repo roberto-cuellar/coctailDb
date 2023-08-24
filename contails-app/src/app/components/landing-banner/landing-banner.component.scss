@@ -1,6 +1,15 @@
 #landing-banner {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0px 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  #landing-banner {
+    grid-template-columns: 1fr;
+  }
 }
 
 #image-banner-container {
@@ -85,7 +94,7 @@ img {
 .box:after {
   position: absolute;
   right: -50px;
-  content: '';
+  content: "";
   width: 0;
   height: 0;
   // border-left: 50px solid transparent;

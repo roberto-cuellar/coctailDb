@@ -13,7 +13,8 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { Drink, DrinkMin } from 'src/app/interfaces/drinks.interfaces';
+import { Drink } from 'src/app/interfaces/drinks.interfaces';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-show-items',
@@ -46,6 +47,7 @@ export class ShowItemsComponent implements AfterViewInit, OnChanges {
   get data(): Drink[] {
     return this._data;
   }
+
 
   // Pagination
   totalItems = 0;
@@ -83,11 +85,22 @@ export class ShowItemsComponent implements AfterViewInit, OnChanges {
     'orange',
   ];
 
-  constructor(private cdRef: ChangeDetectorRef, private router: Router) {}
+  isSmallScreen = false;
+
+  constructor(private cdRef: ChangeDetectorRef, private router: Router, private breakpointObserver: BreakpointObserver) {}
 
   ngAfterViewInit(): void {
     this.configureTitle();
     this.configurePagination();
+
+    this.screenWatch();
+  }
+
+  screenWatch(){
+    this.isSmallScreen = this.breakpointObserver.isMatched('(max-width: 500px)');
+    this.breakpointObserver.observe('(max-width: 500px)').subscribe((result) => {
+      this.isSmallScreen = result.matches;
+    });
   }
 
   configurePagination() {
